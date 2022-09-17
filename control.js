@@ -1,4 +1,4 @@
-import rectangle from './rectFun.js'
+import rectangle from './rectangle.cls.js'
     const animateRect = setInterval(animatRectangle, 30)
 
     document.body.setAttribute('style','overflow:hidden; background-color: #C4EEF2;');
