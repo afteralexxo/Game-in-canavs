@@ -1,7 +1,8 @@
 import rectangle from './rectangle.cls.js'
+
     const animateRect = setInterval(animatRectangle, 30)
 
-    document.body.setAttribute('style','overflow:hidden; background-color: #C4EEF2;');
+    document.body.setAttribute('style','overflow:hidden; background-color: #FFFFFF;');
 
         const canvas = document.querySelector('canvas')
         canvas.width = window.innerWidth
@@ -29,6 +30,6 @@ import rectangle from './rectangle.cls.js'
                     rect.keyCode = 40
                 }
             } 
-            rect.update()
+            rect.move()
         }
 
