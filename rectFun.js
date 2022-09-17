@@ -4,8 +4,8 @@ export default class rectangle{
         this.x = x
         this.y = y
         this.ctx = ctx
-        this.dx = 5
-        this.dy = 5
+        this.dx = 10
+        this.dy = 10
         this.keyCode = 0
     }
 
@@ -17,22 +17,33 @@ export default class rectangle{
 
     update(){
         this.draw()
-        if(this.keyCode == 40){
-            if(this.y > innerHeight-90 || this.y < 0){
-                this.dy = -this.dy
+        if(this.keyCode == 37)
+        {
+            this.x -= Math.abs(this.dy)
+            if(this.x+90 < 0){
+                this.x = innerWidth
             }
-            this.y += this.dy
         }
-
-        else if(this.keyCode == 39){
-            this.x += this.dx
-            console.log(this.x);
-            if(this.x > innerWidth-90 || this.x < 0){
-                this.dx = -this.dx
-            } 
+        if(this.keyCode == 38)
+        {
+            this.y -= Math.abs(this.dy)
+            if(this.y+60 < 0){
+                this.y = innerHeight
+            }
         }
-    }
-}
-
-
-
+        if(this.keyCode == 39)
+        {
+            this.x += Math.abs(this.dx)
+            if(this.x > innerWidth){
+                this.x = 0
+            }
+        }
+        if(this.keyCode == 40)
+        {
+            this.y += Math.abs(this.dy)
+            if(this.y > innerHeight){
+                this.y = 0
+            }
+        } 
+    }// end of update()
+}// end of class rectangle
