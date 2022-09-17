@@ -13,14 +13,15 @@ export default class rectangle{
     draw(){
         this.ctx.beginPath()
         this.ctx.rect(this.x, this.y, 90, 60)
-        this.ctx.stroke()
+        this.ctx.fillStyle = this.color
+        this.ctx.fill()
     }
 
     update(){
         this.draw()
         if(this.keyCode == 37)
         {
-            this.color = '#151F30'
+            this.color = '#025159'
             this.x -= Math.abs(this.dy)
             if(this.x < 0){
                 this.x = innerWidth
@@ -28,7 +29,7 @@ export default class rectangle{
         }
         if(this.keyCode == 38)
         {
-            this.color = '#103778'
+            this.color = '#A67458'
             this.y -= Math.abs(this.dy)
             if(this.y < 0){
                 this.y = innerHeight

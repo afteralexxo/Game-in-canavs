@@ -1,5 +1,8 @@
 import rectangle from './rectFun.js'
-    const animatRect = setInterval(animatRectangle, 30)
+    const animateRect = setInterval(animatRectangle, 30)
+
+    document.body.setAttribute('style','overflow:hidden; background-color: #C4EEF2;');
+
         const canvas = document.querySelector('canvas')
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
