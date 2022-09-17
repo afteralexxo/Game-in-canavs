@@ -1,38 +1,35 @@
-const canvas = document.querySelector('canvas')
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+import rectangle from './rectFun.js'
+    
+        const canvas = document.querySelector('canvas')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
 
-const ctx = canvas.getContext('2d')
+        const ctx = canvas.getContext('2d')
 
-class Rectfun{
-constructor(x, y){
-    this.x = x
-    this.y = y
-}
+        const rect = new rectangle(0, 10, ctx)
+        
+        function animatRectangle(){
 
-    draw(){
-        ctx.beginPath()
-        ctx.rect(this.x, this.y, 90, 60)
-        ctx.stroke()
-    }
-
-    update(){
-        this.draw()
-        if(this.x > innerWidth-90){
-            this.x = this.x
-            return
+            requestAnimationFrame(animatRectangle)
+            ctx.clearRect(0, 0, innerWidth, innerHeight)
+            document.onkeydown = (e) => {
+                if(e.keyCode == 40){
+                    rect.keyCode = 40
+                }
+                if(e.keyCode == 39){
+                    rect.keyCode = 39
+                }
+                if(e.keyCode == 40){
+                    rect.keyCode = 40
+                }
+                if(e.keyCode == 40){
+                    rect.keyCode = 40
+                }
+                console.log(e.keyCode)
+            } 
+            rect.update()
         }
 
-        this.x++
-    }
-}
-
-const rect = new Rectfun(0,10)
-
-const animatRectangle = function(){
-    requestAnimationFrame(animatRectangle)
-    ctx.clearRect(0, 0, innerWidth, innerHeight)
-    rect.update()
-}
-
 animatRectangle()
+       
+
